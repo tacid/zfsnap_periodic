@@ -2,8 +2,8 @@
 
 # If there is a global system configuration file, suck it in.
 #
-if [ -r /etc/zfsnap.conf ]; then
-	. /etc/zfsnap.conf
+if [ -r /etc/zfsnap-periodic.conf ]; then
+	. /etc/zfsnap-periodic.conf
 fi
 
 zfSnap_cmd=`which zfSnap`
