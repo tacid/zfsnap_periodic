@@ -13,7 +13,7 @@
 
 1. Клонируйте репозиторий в какую-то папку
 2. Скопируйте zfsnap.conf в /etc/zfsnap.conf
-3. Cоздайте символические линки на zfsnap_create в папках /etc/cron.hourly,
+3. Cоздайте символические линки на zfsnap-periodic.sh в папках /etc/cron.hourly,
    /etc/cron.daily, /etc/cron.weekly, /etc/cron.monthly (или только в
    тех, с какой переодичностю вам нужны снепшоты)
 
