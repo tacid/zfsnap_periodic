@@ -12,13 +12,14 @@
 ### Установка
 
 1. Клонируйте репозиторий в какую-то папку
-2. Скопируйте zfsnap.conf в /etc/zfsnap.conf
-3. Cоздайте символические линки на zfsnap-periodic.sh в папках /etc/cron.hourly,
-   /etc/cron.daily, /etc/cron.weekly, /etc/cron.monthly (или только в
-   тех, с какой переодичностю вам нужны снепшоты)
+2. Запустите install.sh скрипт, он скопирует конфигурацию `zfsnap-periodic.conf`
+   в `/etc/zfsnap-periodic.conf`, а скрипт zfsnap-periodic.sh скопирует
+   в папки /etc/cron.hourly, /etc/cron.daily, /etc/cron.weekly, /etc/cron.monthly
+   (можно после просто удалить лишние файлы, оставив их только в тех папках,
+   с какой переодичностю вам нужны снепшоты)
 
 
 ### Настройка
 
-Для минимальной настройки, нужно в файле /etc/zfsnap.conf указать в каких
+Для минимальной настройки, нужно в файле /etc/zfsnap-periodic.conf указать в каких
 датасетех нужно автоматически создавать снепшоты
