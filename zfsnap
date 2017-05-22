@@ -6,6 +6,7 @@ if [ -r /etc/zfsnap.conf ]; then
 	. /etc/zfsnap.conf
 fi
 
+zfSnap_cmd=`which zfSnap`
 
 if [ "x$1" == "x" ]; then
   cd `dirname $0`
@@ -63,7 +64,7 @@ case "${zfsnap_enable:-"NO"}" in
 			;;
 		esac
 
-		/usr/sbin/zfSnap $OPTIONS -a ${zfsnap_ttl:-"$default_ttl"} $zfsnap_fs -r $zfsnap_recursive_fs
+		$zfSnap_cmd $OPTIONS -a ${zfsnap_ttl:-"$default_ttl"} $zfsnap_fs -r $zfsnap_recursive_fs
 		#exit $?
 		;;
 
@@ -93,7 +94,7 @@ case "${zfsnap_delete_enable-"NO"}" in
 			OPTIONS="$OPTIONS -p $prefix"
 		done
 
-		/usr/sbin/zfSnap -d $OPTIONS -p 'hourly-' -p 'daily-' -p 'weekly-' -p 'monthly-' -p 'reboot-'
+		$zfSnap_cmd -d $OPTIONS -p 'hourly-' -p 'daily-' -p 'weekly-' -p 'monthly-' -p 'reboot-'
 		exit $?
 		;;
 
